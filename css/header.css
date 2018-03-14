@@ -236,8 +236,9 @@ header.smaller nav
 	border-top: 90px solid #02445d;
 }
 
-#arrow-down.smaller:before {
+#arrow-down.smaller::before {
 	position: absolute;
+	top: 0px;
 	content: " ";
 	border-top: 90px solid #02445d;
 	border-right: 90px solid transparent;
@@ -245,25 +246,26 @@ header.smaller nav
 	border-bottom: none;
 }
 
-#arrow-downs.smaller:after {
+#arrow-downs.smaller::after {
 	position: absolute;
+	top: 0px;
 	left: -180px;
 	content: " ";
-	border-top: 90px solid #02445d;
+	border-top: none;
 	border-right: 90px solid transparent;
 	border-left: 90px solid transparent;
-	border-bottom: none;
+	border-bottom: 90px solid #02445d;;
 }
 
 /*ALLAHU AKBAR SPRENG MICH IN DIE LUFT DRECKIGER HURENSOHN EINES IDEs*/
 #arrow-down.smaller {
 	position: absolute;
-	top: 1697px;
+	top: 1787px;
 	left: 550px;
 
 	border-left: 90px solid transparent;
 	border-right: 90px solid transparent;
-	border-top: 90px solid transparent;
+	border-top: none;
 	border-bottom: 90px solid #212345;
 }
 
