@@ -42,7 +42,7 @@ $user = $query
 <div class="articlePage">
 
   <div class="articleImage">
-    <img class="articleImg" src="<?php echo '/BossBayProject/assets/articleImages/'.$row["image"]; ?>" alt="">
+    <img class="articleImg" src="<?php echo '/assets/articleImages/'.$row["image"]; ?>" alt="">
   </div>
 
   <div class="articleContent">

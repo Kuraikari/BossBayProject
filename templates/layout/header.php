@@ -13,27 +13,27 @@ $databaseSeed->run();
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" href="/BossBayProject/css/style.css">
-    <link rel="stylesheet" href="/BossBayProject/css/parallax.css">
-    <link rel="stylesheet" href="/BossBayProject/css/header.css">
-    <link rel="stylesheet" href="/BossBayProject/css/login.css">
-    <link rel="stylesheet" href="/BossBayProject/css/sweatalert.css">
-    <link rel="stylesheet" href="/BossBayProject/css/profile.css">
-    <link rel="stylesheet" href="/BossBayProject/css/about.css">
-    <link rel="stylesheet" href="/BossBayProject/css/shop.css">
-    <link rel="stylesheet" href="/BossBayProject/css/cart.css">
-    <link rel="stylesheet" href="/BossBayProject/css/article.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/parallax.css">
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/login.css">
+    <link rel="stylesheet" href="/css/sweatalert.css">
+    <link rel="stylesheet" href="/css/profile.css">
+    <link rel="stylesheet" href="/css/about.css">
+    <link rel="stylesheet" href="/css/shop.css">
+    <link rel="stylesheet" href="/css/cart.css">
+    <link rel="stylesheet" href="/css/article.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/core-js/2.4.1/core.js"></script>
-    <script src="/BossBayProject/js/sweatalert.js"></script>
+    <script src="/js/sweatalert.js"></script>
 
-    <script src="/BossBayProject/js/header.js"></script>
-    <script src="/BossBayProject/js/modal.js"></script>
-    <script src="/BossBayProject/js/countdown.js"></script>
+    <script src="/js/header.js"></script>
+    <script src="/js/modal.js"></script>
+    <script src="/js/countdown.js"></script>
 
 </head>
 <body>
@@ -54,7 +54,7 @@ $databaseSeed->run();
                 } ?> data-hover="Home">Home</a>
                 <a href="/BossBay/Media" <?php if ($actual_link == "http://localhost/BossBay/Media") {
                     echo "class='active'";
-                } ?> data-hover="Shop">Media</a>
+                } ?> data-hover="Media">Media</a>
                 <a href="/BossBay/About" <?php if ($actual_link == "http://localhost/BossBay/About") {
                     echo "class='active'";
                 } ?> data-hover="About">About</a>
@@ -92,7 +92,7 @@ $databaseSeed->run();
                         <i class="fa fa-sign-out"></i>
                     </a>
 
-                    <img src="<?php echo '/BossBayProject/assets/userimages/' . $image ?>" class="userImage" width="35"
+                    <img src="<?php echo '/assets/userimages/' . $image ?>" class="userImage" width="35"
                          height="35">
 
                     <label for="" class="userLabel"><?php echo $user ?></label>

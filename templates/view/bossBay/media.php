@@ -35,7 +35,7 @@ while ($row = $myQuery->fetch(PDO::FETCH_ASSOC))
     ->execute()->fetch();
 ?>
 <figure class="snip1477">
-  <img src="<?php echo '/BossBayProject/assets/articleImages/'.$row["image"]; ?>" alt="sample38" />
+  <img src="<?php echo '/assets/articleImages/'.$row["image"]; ?>" alt="sample38" />
   <div class="title">
     <div>
       <h2><?php echo $row["name"]; ?></h2>
