@@ -23,6 +23,7 @@ $databaseSeed->run();
     <link rel="stylesheet" href="/css/shop.css">
     <link rel="stylesheet" href="/css/cart.css">
     <link rel="stylesheet" href="/css/article.css">
+    <link rel="stylesheet" href="/css/prism.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 
