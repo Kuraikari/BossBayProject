@@ -17,6 +17,6 @@
 
 <div id="heroText2" class="heroText2">
     <div class="goTOShop">
-      <a href="/BossBay/Shop"  class="btn btn-sm animated-button thar-three" style="width: 380px;">STEAL NOW!</a>
+      <a href="/BossBay/Shop"  class="btn btn-sm animated-button thar-three" style="width: 380px; border-color: rgb(182,176,37); color: rgb(182,176,37); ">STEAL NOW!</a>
     </div>
 </div>

@@ -55,15 +55,15 @@ $databaseSeed->run();
                 <a href="/BossBay/Media" <?php if ($actual_link == "http://localhost/BossBay/Media") {
                     echo "class='active'";
                 } ?> data-hover="Media">Media</a>
-                <a href="/BossBay/About" <?php if ($actual_link == "http://localhost/BossBay/About") {
+                <a href="/BossBay/Prism" <?php if ($actual_link == "http://localhost/BossBay/Prism") {
                     echo "class='active'";
-                } ?> data-hover="About">About</a>
+                } ?> data-hover="Prism">Prism</a>
 
             </nav>
         </div>
 
         <div class="navMiddle">
-            <h1 id="logo">LiteratureClub</h1>
+            <h1 id="logo">Prism</h1>
         </div>
 
         <div class="navRight">

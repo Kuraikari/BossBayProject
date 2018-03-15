@@ -8,5 +8,5 @@ body, html
     -webkit-font-smoothing: subpixel-antialiased;
     font-smoothing: subpixel-antialiased;
 
-    filter: grayscale(1) sepia(100%) hue-rotate(420deg) saturate(200%);
+   /* filter: grayscale(1) sepia(100%) hue-rotate(315deg) saturate(500%); */
 }
