@@ -45,10 +45,10 @@ $myQuery = $query
                 ->execute()->fetch();
             ?>
                 <figure class="snip1477">
-                    <img src="<?php echo '/assets/articleImages/'.$row["image"]; ?>" alt="sample38" />
+                    <img src="<?php echo '/assets/lolis/'.$row["image"]; ?>" alt="sample38" />
                     <div class="title">
                         <div>
-                            <h2><?php echo $row["name"]; ?></h2>
+                            <h2><?php echo $row["firstname"] . " " . $row["lastname"]; ?></h2>
                             <h4><?php echo $cat[0]; ?></h4>
                         </div>
                     </div>

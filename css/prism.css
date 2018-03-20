@@ -46,3 +46,14 @@
     padding: 10px;
     left: 100px;
 }
+
+.lolipage{
+    padding: 5px;
+    background: rgba(93%,92%,100%,0.8);
+}
+
+.lolipage .articleImg {
+    margin-right: 40px;
+    margin-left: 5px;
+    border: black 2px solid;
+}

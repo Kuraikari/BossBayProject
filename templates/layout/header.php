@@ -15,7 +15,6 @@ $databaseSeed->run();
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/parallax.css">
-    <link rel="stylesheet" href="/css/prism.css">
     <link rel="stylesheet" href="/css/header.css">
     <link rel="stylesheet" href="/css/login.css">
     <link rel="stylesheet" href="/css/sweatalert.css">
@@ -24,6 +23,7 @@ $databaseSeed->run();
     <link rel="stylesheet" href="/css/shop.css">
     <link rel="stylesheet" href="/css/cart.css">
     <link rel="stylesheet" href="/css/article.css">
+    <link rel="stylesheet" href="/css/prism.css">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Prism - Where Lolis are 3D</title>
