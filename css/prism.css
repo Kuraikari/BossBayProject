@@ -35,3 +35,14 @@
     color: white;
     border: solid 1px #9de0f6;
 }
+
+.loliindex {
+    background: rgba(20%, 20%, 30%, 0.8);
+    border: solid 1px white;
+    position: absolute;
+    width: 88%;
+    height: auto;
+    top: 500px;
+    padding: 10px;
+    left: 100px;
+}
