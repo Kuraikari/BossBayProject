@@ -57,3 +57,36 @@
     margin-left: 5px;
     border: black 2px solid;
 }
+
+.loli-upload {
+    position: absolute;
+    top: 350px;
+    left: 230px;
+    height: auto;
+    width: 920px;
+    padding: 20px;
+    background: rgba(20%, 20%, 30%, 0.6);
+}
+
+.loli-upload input{
+    display: block;
+    margin-bottom: 1px;
+}
+
+.loli-upload input[type=text], .loli-upload input[type=number]{
+    padding: 6px;
+}
+
+.loli-upload input[type=submit]{
+    background: none;
+    border: 3px solid #4193a3;
+    padding: 4px;
+    font-size: medium;
+    color: #4193a3;
+    transition: all 0.33s;
+}
+
+.loli-upload input[type=submit]:hover{
+    color: white;
+    border-color: white;
+}

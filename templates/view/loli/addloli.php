@@ -5,16 +5,33 @@ $query = new QueryBuilder();
 
 $myQuery = $query
     ->select("*")
-    ->from("categorie")
+    ->from("loli")
     ->execute();
 
 
 ?>
 
+<div class="outer-wrapper">
+    <div class="inner-wrapper">
+        <div class="contents">
+            <header><h1>UPLOAD NEW LOLI</h1></header>
+            <div class="loli-upload">
+                <form id="submitFormLoli" action="/user/addArticle" method="POST" enctype="multipart/form-data">
+                    <input type="text" name="loli-firstname" placeholder="Firstname" required>
+                    <input type="text" name="loli-lastname" placeholder="Lastname" required>
+                    <input type="number" name="loli-age" placeholder="Age" required>
+                    <input type="text" name="loli-type" placeholder="Dere-Type" required>
+                    <input type="submit" name="loli-submit" id="submitLoliBtn" value="Upload Loli">
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
 <script type="text/javascript">
     //Set a Button to Submitbutton
     document.getElementById("submitArticleBtn").onclick = function()
     {
-        document.getElementById("submitFormArticle").submit();
+        document.getElementById("submitFormLoli").submit();
     }
 </script>
