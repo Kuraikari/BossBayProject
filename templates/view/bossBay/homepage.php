@@ -1,6 +1,6 @@
 <div class="parallax" >
     <div class="hero-text">
-        <h1 style="font-size:50px; line-height: 0.83em">LiteratureClub AKA Pirates of Somalia</h1>
+        <h1 style="font-size:50px; line-height: 0.83em"><strike>Prism</strike> Prison - Where Lolis are 3D</h1>
         <p>Videos • Games • Music...</p>
     </div>
 </div>

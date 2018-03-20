@@ -15,6 +15,7 @@ $databaseSeed->run();
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/parallax.css">
+    <link rel="stylesheet" href="/css/prism.css">
     <link rel="stylesheet" href="/css/header.css">
     <link rel="stylesheet" href="/css/login.css">
     <link rel="stylesheet" href="/css/sweatalert.css">
@@ -23,9 +24,9 @@ $databaseSeed->run();
     <link rel="stylesheet" href="/css/shop.css">
     <link rel="stylesheet" href="/css/cart.css">
     <link rel="stylesheet" href="/css/article.css">
-    <link rel="stylesheet" href="/css/prism.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prism - Where Lolis are 3D</title>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -64,7 +65,7 @@ $databaseSeed->run();
         </div>
 
         <div class="navMiddle">
-            <h1 id="logo">Prism</h1>
+            <h1 id="logo"><strike>Prism</strike> Prison </h1>
         </div>
 
         <div class="navRight">

@@ -32,7 +32,7 @@
                     <div class="hr"></div>
                     <div class="group">
                         <input type="checkbox" name="remember" id="remember" <?php echo isset($_COOKIE["member_login"]) ?  'checked' : '' ; ?>/>
-                        <label for="remember-me">Remember me</label>
+                        <label for="remember">Remember me</label>
                     </div>
 
                     <?php echo $this->formHelper->endForm(); ?>

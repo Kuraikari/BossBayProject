@@ -1,3 +1,29 @@
+#remember
+{
+    display: none;
+}
+
+#remember ~ label {
+    padding: 5px;
+    border: solid 2px #045e78;
+    transition: all 0.25s;
+}
+
+#remember ~ label:hover {
+    color: white;
+    border-color: white;
+}
+
+#remember:checked ~label {
+    color: limegreen;
+    border: solid 2px limegreen;
+}
+
+#remember:checked ~label:hover {
+    color: white;
+    border: solid 2px white;
+}
+
 .close
 {
     z-index: 1045;
@@ -203,7 +229,7 @@
     position: relative;
     border:0;
     padding:10px 20px;
-    background:rgba(255,255,255,.1);
+    background:rgba(255,255,255,.2);
     width:100%;
     color:#fff;
     display:block;

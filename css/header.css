@@ -226,23 +226,23 @@ header.smaller nav
 #arrow-down {
 	position: fixed;
 	top: 200px;
-	left: 550px;
+	left: 700px;
 
 	width: 0;
 	height: 0;
-	border-left: 90px solid transparent;
-	border-right: 90px solid transparent;
+	border-left: 30px solid transparent;
+	border-right: 30px solid transparent;
 
-	border-top: 90px solid #02445d;
+	border-top: 30px solid #02445d;
 }
 
 #arrow-down.smaller::before {
 	position: absolute;
 	top: 0px;
 	content: " ";
-	border-top: 90px solid #02445d;
-	border-right: 90px solid transparent;
-	border-left: 90px solid transparent;
+	border-top: 30px solid #02445d;
+	border-right: 30px solid transparent;
+	border-left: 30px solid transparent;
 	border-bottom: none;
 }
 
@@ -252,9 +252,9 @@ header.smaller nav
 	left: -180px;
 	content: " ";
 	border-top: none;
-	border-right: 90px solid transparent;
-	border-left: 90px solid transparent;
-	border-bottom: 90px solid #02445d;;
+	border-right: 30px solid transparent;
+	border-left: 30px solid transparent;
+	border-bottom: 30px solid #02445d;;
 }
 
 /*ALLAHU AKBAR SPRENG MICH IN DIE LUFT DRECKIGER HURENSOHN EINES IDEs*/
@@ -263,10 +263,10 @@ header.smaller nav
 	top: 1787px;
 	left: 550px;
 
-	border-left: 90px solid transparent;
-	border-right: 90px solid transparent;
+	border-left: 30px solid transparent;
+	border-right: 30px solid transparent;
 	border-top: none;
-	border-bottom: 90px solid #212345;
+	border-bottom: 30px solid #212345;
 }
 
 #arrow-down::after {
@@ -275,9 +275,9 @@ header.smaller nav
 	left: -180px;
 	content: " ";
 	border-top: none;
-	border-right: 90px solid transparent;
-	border-left: 90px solid transparent;
-	border-bottom: 90px solid #02445d;
+	border-right: 30px solid transparent;
+	border-left: 30px solid transparent;
+	border-bottom: 30px solid #02445d;
 }
 
 #arrow-down::before {
@@ -286,7 +286,7 @@ header.smaller nav
 	left: 0px;
 	content: " ";
 	border-top: none;
-	border-right: 90px solid transparent;
-	border-left: 90px solid transparent;
-	border-bottom: 90px solid #02445d;
+	border-right: 30px solid transparent;
+	border-left: 30px solid transparent;
+	border-bottom: 30px solid #02445d;
 }
