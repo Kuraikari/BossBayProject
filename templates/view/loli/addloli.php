@@ -16,12 +16,13 @@ $myQuery = $query
         <div class="contents">
             <header><h1>UPLOAD NEW LOLI</h1></header>
             <div class="loli-upload">
-                <form id="submitFormLoli" action="/user/addArticle" method="POST" enctype="multipart/form-data">
-                    <input type="text" name="loli-firstname" placeholder="Firstname" required>
-                    <input type="text" name="loli-lastname" placeholder="Lastname" required>
-                    <input type="number" name="loli-age" placeholder="Age" required>
-                    <input type="text" name="loli-type" placeholder="Dere-Type" required>
-                    <input type="submit" name="loli-submit" id="submitLoliBtn" value="Upload Loli">
+                <form id="submitFormLoli" action="/loli/addLoli" method="POST" enctype="multipart/form-data">
+                    <input type="text" name="firstname" placeholder="Firstname" required>
+                    <input type="text" name="lastname" placeholder="Lastname" required>
+                    <input type="number" name="age" placeholder="Age" required>
+                    <input type="text" name="deretype" placeholder="Dere-Type" required>
+                    <input type="file" name="Image" id="Image" accept="image/*">
+                    <input type="submit" name="submit" id="submitLoliBtn" value="Upload Loli">
                 </form>
             </div>
         </div>
