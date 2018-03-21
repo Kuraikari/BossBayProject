@@ -31,7 +31,7 @@ $myQuery = $query
 
 <script type="text/javascript">
     //Set a Button to Submitbutton
-    document.getElementById("submitArticleBtn").onclick = function()
+    document.getElementById("submitLoliBtn").onclick = function()
     {
         document.getElementById("submitFormLoli").submit();
     }
