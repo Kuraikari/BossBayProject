@@ -37,6 +37,15 @@ $user = $query
     ->where("id",$userK[0])
     ->execute()->fetch();
 
+$files;
+
+error_reporting(E_ERROR | E_PARSE);
+if (dir("./assets/lolis/" . strtolower($row["lastname"]) . "/videos") != null)
+    $files = scandir("./assets/lolis/" . strtolower($row["lastname"]) . "/videos");
+
+if ($files != null)
+    $files = array_splice($files, 2 );
+// print_r($files);
 ?>
 
 <div class="articlePage lolipage">
@@ -64,44 +73,33 @@ $user = $query
     </div>
 
     <div>
-        <a  href="/loli/addloli" id="addCartBtn" class="btn btn-sm animated-button thar-three" style="position: absolute; left: 500px;">ADD VIDEO</a>
+        <a  href="/loli/uploadVideo?id=<?php echo $row["id"]?>" id="addCartBtn" class="btn btn-sm animated-button thar-three" style="position: absolute; left: 500px;">ADD VIDEO</a>
     </div>
 
+    <p>Videos: <?php if ($files != null)echo count($files);  else echo 0;?></p>
 
 
-    <div class="commentsSection">
-        <div class="comments">
-            <p>Comments: 10</p>
-        </div>
 
-        <div>
-            <h5 class="commentTitle">Comments:</h5>
-        </div>
+    <div class="videoSection" style="position: absolute; top: 750px; left: 280px; margin: 5px; padding: 10px;">
+        <div id="videos">
 
-        <div class="commentsSectionCommentary">
-            <div>
-                <h6 class="commentSectionTitle">Bossjer,
-                    <span>26.01.2018</span></h6>
+            <?php if ($files != null){
+                foreach ($files as $file) {?>
+            <div class="video" style="margin: 14px; padding: 10px; float: left;
+                                      width: 250px; background: rgba(70%, 70%, 70%, 0.4);
+                                      text-align: center; border: solid 2px rgba(0, 0, 0, 0.6); box-shadow: 0 0 5px 2px grey;
+                                      border-radius: 8px;">
+                <video width="200" height="200" controls poster="<?php echo "/assets/lolis/". $row["image"]; ?>">
+                    <source src="<?php echo "/assets/lolis/" . $row["lastname"] . "/videos/" . $file ?>" type="video/mp4">
+                </video>
+                <form id="submitFormLoli" action="/loli/deleteVideo" method="POST" enctype="multipart/form-data">
+                    <input type="submit" value="Delete Video" name="submit-delete">
+                    <input type="hidden" value="<?php echo $file?>" name="filename">
+                    <input type="hidden" value="<?php echo $row["lastname"]?>" name="lastname">
+                    <input type="hidden" value="<?php echo $row["id"]?>" name="id">
+                </form>
             </div>
-            <div class="commentsSectionText">
-                <p>Nice Product</p>
-            </div>
-        </div>
-    </div>
-
-    <div class="writeSection">
-        <div class="writeComment">
-            <h5 class="commentTitle">Write Comment:</h5>
-        </div>
-
-        <div>
-            <form id="submitFormCommentary<?php echo $row["id"]; ?>" action="/user/addComment" method="POST">
-                <input type="hidden" name="hidden_ID" value="<?php echo $row["id"]; ?>"/>
-                <textarea class="inputCommentary" name="userComment">Write your commentary here...</textarea>
-                <div class="group">
-                    <a href="#" id="submitButtonCommentary<?php echo $row["id"]; ?>" class="submitButtonCommentary">Submit</a>
-                </div>
-            </form>
+            <?php }}?>
         </div>
     </div>
 </div>

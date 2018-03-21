@@ -51,6 +51,8 @@ header nav
 	/*float: right;*/
 	/*margin-right: 200px;*/
 
+	position: relative;
+	left: -150px;
 	-webkit-transition: all 0.3s;
 	-moz-transition: all 0.3s;
 	-ms-transition: all 0.3s;
@@ -214,12 +216,13 @@ header.smaller nav
 .navRight
 {
 	display: inline-block;
+	margin-left: 500px;
 }
 
 .navMiddle
 {
-	margin-left: 40px;
-	margin-right: 10px;
+	margin-left: -120px;
+	margin-right: 180px;
 	display: inline-block;
 }
 

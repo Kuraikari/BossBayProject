@@ -58,4 +58,37 @@ class LoliController extends BaseController
         }
     }
 
+    public function addVideoLoli()
+    {
+        if ($this->httpHandler->isPost()) {
+            $data = $this->httpHandler->getData();
+            $query = new QueryBuilder();
+            $imagename = $_FILES['Video']['name'];
+
+            if ($data) {
+                if ($_FILES['Video']['name'])
+                {
+                    mkdir($_SERVER['DOCUMENT_ROOT'] . '/assets/lolis/' . strtolower($data['lastname']) . '/videos', 0777, true);
+
+                    $uploader = new FileUploader( $_SERVER['DOCUMENT_ROOT'] . '/assets/lolis/' . strtolower($data['lastname']) . '/videos' . '/');
+                    $uploader->upload($_FILES['Video'], 'video');
+
+                }
+                header("Location:/BossBay/Loli?id=" . $data['id']);
+            }
+        }
+    }
+
+    public function deleteVideo()
+    {
+        if ($this->httpHandler->isPost()){
+            $data = $this->httpHandler->getData();
+
+            if ($data){
+                unlink($_SERVER['DOCUMENT_ROOT'] . '/assets/lolis/' . strtolower($data['lastname']) . '/videos/' . $data['filename']);
+            }
+            header("Location:/BossBay/Loli?id=" . $data['id']);
+        }
+    }
+
 }

@@ -45,10 +45,10 @@ class UserController extends BaseController implements ControllerInterface
                  ->addField("article_fk")
                  ->addField("text")
                  ->addField("date")
-                 ->addValue("$userId")
-                 ->addValue("$id")
-                 ->addValue("$comment")
-                 ->addLastValue("$date");
+                 ->addValue("".$userId."")
+                 ->addValue("".$id."")
+                 ->addValue("".$comment."")
+                 ->addLastValue("".$date."");
 
              header("Location:/BossBay/Shop");
          }

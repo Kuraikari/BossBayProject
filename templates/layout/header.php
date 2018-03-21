@@ -60,6 +60,9 @@ $databaseSeed->run();
                 <a href="/BossBay/Prism" <?php if ($actual_link == "http://localhost/BossBay/Prism") {
                     echo "class='active'";
                 } ?> data-hover="Prism">Prism</a>
+                <a href="/BossBay/Loli-Index" <?php if ($actual_link == "http://localhost/BossBay/Loli-Index") {
+                    echo "class='active'";
+                } ?> data-hover="Index">Index</a>
 
             </nav>
         </div>

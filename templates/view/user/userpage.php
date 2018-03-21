@@ -30,9 +30,9 @@ if (\services\Sessionmanagement::get('user'))
         <img class="profileImg" src="<?php
         if($row["image"] != null)
         {
-            echo '/BossBayProject/assets/userimages/' . $row["image"];
+            echo '/assets/userimages/' . $row["image"];
         }else {
-            echo '/BossBayProject/assets/userimages/defaultUser.png';
+            echo '/assets/userimages/defaultUser.png';
         }
         ?>" alt="">
         <div class="profile">

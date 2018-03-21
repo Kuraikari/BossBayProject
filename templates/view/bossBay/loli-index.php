@@ -22,7 +22,7 @@ $myQuery = $query
     <div class="inner-wrapper">
         <div class="contents">
             <header style="height: auto; padding-bottom: 10px; padding-top: 5px;">
-                <h1>Onii-chan I need you!</h1>
+                <h1>Onii-chan, I need you!</h1>
                 <img src="../../../assets/pictures/onii-chan.gif" style="position: relative; left: -200px;">
                 <p style="font-style: normal; font-size: small; width: 350px; position:absolute; right: 40px; top: 120px;">
                     This little maiden needs your help to overcome her overly exaggerated anxiety.
@@ -61,6 +61,7 @@ $myQuery = $query
                 <?php
             }
             ?>
+                <a href="../loli/addloli" class="btn btn-sm animated-button thar-three" style="filter: hue-rotate(180deg) brightness(1.2);">ADD NEW LOLI</a>
             </div>
         </div>
     </div>
