@@ -42,7 +42,7 @@ $user = $query
 <div class="articlePage lolipage">
 
     <div class="articleImage">
-        <img class="articleImg" src="<?php echo '/assets/lolis/'.$row["image"]; ?>" alt="">
+        <img class="articleImg" style="height: 250; width: 250;" src="<?php echo '/assets/lolis/'.$row["image"]; ?>" alt="">
     </div>
 
     <div class="articleContent">
@@ -63,20 +63,8 @@ $user = $query
         </div>
     </div>
 
-    <div class="articleContent">
-        <div class="articleValue">
-            <p>Categories: <?php echo $cat[0]; ?></p>
-        </div>
-    </div>
-
-    <div class="articleContent">
-        <div class="articleValue">
-            <p>From: <?php echo $user[0]; ?></p>
-        </div>
-    </div>
-
     <div>
-        <a  href="/loli/addloli" id="addCartBtn" class="btn btn-sm animated-button thar-three" style="position: absolute; left: 550px;">ADD VIDEO</a>
+        <a  href="/loli/addloli" id="addCartBtn" class="btn btn-sm animated-button thar-three" style="position: absolute; left: 500px;">ADD VIDEO</a>
     </div>
 
 

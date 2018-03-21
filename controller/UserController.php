@@ -42,7 +42,7 @@ class UserController extends BaseController implements ControllerInterface
              $query
                  ->insert("review")
                  ->addField("userFk")
-                 ->addField("articleFK")
+                 ->addField("article_fk")
                  ->addField("text")
                  ->addField("date")
                  ->addValue("$userId")
