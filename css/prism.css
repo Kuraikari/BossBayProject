@@ -92,3 +92,16 @@
     color: white;
     border-color: white;
 }
+
+.delete-video{
+    background: none;
+    border: solid 3px #045e78;
+    padding: 3px;
+    color: #045e78;
+    transition: all 0.25s;
+}
+
+.delete-video:hover{
+    color: red;
+    border-color: red;
+}

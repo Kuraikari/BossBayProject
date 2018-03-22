@@ -21,7 +21,14 @@ $row = $myQuery->fetch(PDO::FETCH_ASSOC);
                     <input type="text" name="firstname" placeholder="Firstname" value="<?php echo $row['firstname']?>" readonly>
                     <input type="text" name="lastname" placeholder="Lastname"  value="<?php echo $row['lastname']?>" readonly>
                     <input type="number" name="id" placeholder="ID"  value="<?php echo $row['id']?>" readonly>
-                    <input type="file" name="Video" id="Video" accept="video/*">
+                    <input type="file" name="Video" id="Video" accept="video/*"><br>
+                    <label style="font-size: small; margin-top: 10px; margin-bottom: 15px;">Künstler(in):
+                        <select name="mediatype" size="3" style="position: absolute; left: 150px;">
+                            <option>video</option>
+                            <option>audio</option>
+                            <option>various</option>
+                        </select>
+                    </label><br>
                     <input type="submit" name="submit" id="submitLoliBtn" value="Upload Video">
                 </form>
             </div>

@@ -63,7 +63,24 @@ class LoliController extends BaseController
         if ($this->httpHandler->isPost()) {
             $data = $this->httpHandler->getData();
             $query = new QueryBuilder();
-            $imagename = $_FILES['Video']['name'];
+            $videoname = $_FILES['Video']['name'];
+
+            $query = new QueryBuilder();
+            $user = unserialize(\services\Sessionmanagement::get('user'))['id'];
+
+            $query
+                ->insert("media")
+                ->addField("name")
+                ->addField("user_fk")
+                ->addField("loli_fk")
+                ->addField("mediatype")
+                ->addField("hidden")
+
+                ->addValue("".$videoname."")
+                ->addValue("".$user."")
+                ->addValue("".$data['id']."")
+                ->addValue("".$data['mediatype']."")
+                ->addLastValue("".$data['hidden']."");
 
             if ($data) {
                 if ($_FILES['Video']['name'])
