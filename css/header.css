@@ -293,3 +293,19 @@ header.smaller nav
 	border-left: 30px solid transparent;
 	border-bottom: 30px solid #02445d;
 }
+
+.loggedOut{
+	position: relative;
+	bottom: 40px;
+	margin-left: 600px;
+}
+
+.loggedIn{
+	position: relative;
+	top: -60px;
+	pointer-events: none;
+}
+
+.loggedIn a{
+	pointer-events: auto;
+}

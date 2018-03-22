@@ -93,7 +93,7 @@ if ($files != null)
                     <source src="<?php echo "/assets/lolis/" . $row["lastname"] . "/videos/" . $file ?>" type="video/mp4">
                 </video>
                 <form id="submitFormLoli" action="/loli/deleteVideo" method="POST" enctype="multipart/form-data">
-                    <input type="submit" value="Delete Video" name="submit-delete">
+                    <input type="submit" value="Delete Video" name="submit-delete" style="background: none; border: solid 3px #045e78; padding: 3px; color: #045e78;">
                     <input type="hidden" value="<?php echo $file?>" name="filename">
                     <input type="hidden" value="<?php echo $row["lastname"]?>" name="lastname">
                     <input type="hidden" value="<?php echo $row["id"]?>" name="id">

@@ -40,7 +40,7 @@ $databaseSeed->run();
 </head>
 <body>
 
-<?php $this->renderComponent( "login.php" ) ?>
+<?php $this->renderComponent("login.php") ?>
 
 <header id="js-header">
     <div class="container clearfix">
@@ -60,9 +60,10 @@ $databaseSeed->run();
                 <a href="/BossBay/Prism" <?php if ($actual_link == "http://localhost/BossBay/Prism") {
                     echo "class='active'";
                 } ?> data-hover="Prism">Prism</a>
-                <a href="/BossBay/Loli-Index" <?php if ($actual_link == "http://localhost/BossBay/Loli-Index") {
+                <?php if (\services\Sessionmanagement::get('user')) { ?> <a
+                        href="/BossBay/Loli-Index" <?php if ($actual_link == "http://localhost/BossBay/Loli-Index") {
                     echo "class='active'";
-                } ?> data-hover="Index">Index</a>
+                } ?> data-hover="Index">Index</a> <?php } ?>
 
             </nav>
         </div>
@@ -76,36 +77,37 @@ $databaseSeed->run();
 
                 <?php
 
-                if (\services\Sessionmanagement::get( 'user' )) {
-                    $user = unserialize( \services\Sessionmanagement::get( 'user' ) )['username'];
-                    $image = unserialize( \services\Sessionmanagement::get( 'user' ) )['image'];
+                if (\services\Sessionmanagement::get('user')) {
+                    $user = unserialize(\services\Sessionmanagement::get('user'))['username'];
+                    $image = unserialize(\services\Sessionmanagement::get('user'))['image'];
                     ?>
-                    <a href="/user/userpage"
-                       class="iconUser <?php if ($actual_link == "http://localhost/user/userpage") {
-                           echo "active";
-                       } ?>">
-                        <i class="fa fa-user"></i>
-                    </a>
+                    <div class="loggedIn">
+                        <a href="/user/userpage"
+                           class="iconUser <?php if ($actual_link == "http://localhost/user/userpage") {
+                               echo "active";
+                           } ?>" style="position: relative; left: -250px; top: 0px;">
+                            <i class="fa fa-user"></i>
+                        </a>
 
-                    <a href="/user/cart" class="iconUser <?php if ($actual_link == "http://localhost/user/cart") {
-                        echo "active";
-                    } ?>">
+                        <!-- <a href="/user/cart" class="iconUser <?php // if ($actual_link == "http://localhost/user/cart") {
+                        //  echo "active";
+                        // } ?>">
                         <i class="fa fa-shopping-cart"></i>
-                    </a>
+                    </a> -->
 
-                    <a href="/user/logout" class="iconUser">
-                        <i class="fa fa-sign-out"></i>
-                    </a>
+                        <a href="/user/logout" class="iconUser" style="position: relative; left: -250px; top: 0px;">
+                            <i class="fa fa-sign-out"></i>
+                        </a>
 
-                    <img src="<?php echo '/assets/userimages/' . $image ?>" class="userImage" width="35"
-                         height="35">
+                        <img src="<?php echo '/assets/userimages/' . $image ?>" class="userImage" width="35"
+                             height="35" style="position: relative; left: 150px; top: 0px;">
 
-                    <label for="" class="userLabel"><?php echo $user ?></label>
-
+                        <label for="" class="userLabel" style="position: relative; left: 150px; top: 0px;"><?php echo $user ?></label>
+                    </div>
                     <?php
                     //                    echo '<a class="userNav" href="/user/userpage" data-hover="'.$user.'">Welcome '.$user.'</a>';
                 } else {
-                    echo '<a href="#modal" class="iconUser">';
+                    echo '<a href="#modal" class="iconUser loggedOut">';
                     echo '<i class="fa fa-sign-in"></i>';
                     echo '</a>';
                 }

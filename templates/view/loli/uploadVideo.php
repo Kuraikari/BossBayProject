@@ -15,7 +15,7 @@ $row = $myQuery->fetch(PDO::FETCH_ASSOC);
 <div class="outer-wrapper">
     <div class="inner-wrapper">
         <div class="contents">
-            <header><h1>UPLOAD NEW LOLI</h1></header>
+            <header><h1>UPLOAD NEW LOLI-VIDEO</h1></header>
             <div class="loli-upload">
                 <form id="submitFormLoli" action="/loli/addVideoLoli" method="POST" enctype="multipart/form-data">
                     <input type="text" name="firstname" placeholder="Firstname" value="<?php echo $row['firstname']?>" readonly>
