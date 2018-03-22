@@ -85,10 +85,19 @@ class LoliController extends BaseController
             if ($data) {
                 if ($_FILES['Video']['name'])
                 {
-                    mkdir($_SERVER['DOCUMENT_ROOT'] . '/assets/lolis/' . strtolower($data['lastname']) . '/videos', 0777, true);
 
-                    $uploader = new FileUploader( $_SERVER['DOCUMENT_ROOT'] . '/assets/lolis/' . strtolower($data['lastname']) . '/videos' . '/');
-                    $uploader->upload($_FILES['Video'], 'video');
+                    $videoname_damn = explode(".",$videoname);
+                    $lastEl = array_values(array_slice($videoname_damn, -1))[0];
+
+                    if ($lastEl == "mp4" || $lastEl == "ogg") {
+                        mkdir($_SERVER['DOCUMENT_ROOT'] . '/assets/lolis/' . strtolower($data['lastname']) . '/videos', 0777, true);
+                        $uploader = new FileUploader($_SERVER['DOCUMENT_ROOT'] . '/assets/lolis/' . strtolower($data['lastname']) . '/videos' . '/');
+                        $uploader->upload($_FILES['Video'], 'video');
+                    } elseif($lastEl == "mp3"){
+                        mkdir($_SERVER['DOCUMENT_ROOT'] . '/assets/lolis/' . strtolower($data['lastname']) . '/audio', 0777, true);
+                        $uploader = new FileUploader($_SERVER['DOCUMENT_ROOT'] . '/assets/lolis/' . strtolower($data['lastname']) . '/audio' . '/');
+                        $uploader->upload($_FILES['Video'], 'audio');
+                    }
 
                 }
                 header("Location:/BossBay/Loli?id=" . $data['id']);
