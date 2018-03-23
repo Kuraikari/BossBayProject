@@ -1,11 +1,11 @@
 # WebsiteToTest 
 
 ## Contents
-- [Introduction](@Introduction) 
-- [Why I started this](@WhyIstartedthis) 
-- [Features](Features) 
-- [Uses](Uses)
-- [Future updates](Future updates) 
+- [Introduction](#Introduction) 
+- [Why I started this](#Why-I-started-this) 
+- [Features](#Features) 
+- [Uses](#Uses)
+- [Future updates](#Future-updates) 
 - Installation
 
 
