@@ -20,6 +20,16 @@ This is changed version of the previous project, which is the reason for the sam
 ## Features 
 At the moment there are some things that are there just for fun and don't have any further purpose, at least right now. 
 
+- Shop
+- Media
+- Login
+- Logout
+- Register
+- Profilepage
+- Edit Profile
+- Cart
+- Database Connection
+
 ## Uses
 There are different features and uses for this proect. There is a shop, media upload and some playthings where I tried to toy with some code. 
 
