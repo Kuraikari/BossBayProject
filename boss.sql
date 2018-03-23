@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Erstellungszeit: 14. Mrz 2018 um 11:09
+-- Erstellungszeit: 23. Mrz 2018 um 11:49
 -- Server-Version: 10.1.30-MariaDB
 -- PHP-Version: 7.2.2
 
@@ -85,6 +85,75 @@ INSERT INTO `categorie` (`id`, `name`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Tabellenstruktur für Tabelle `loli`
+--
+
+CREATE TABLE `loli` (
+  `id` int(11) NOT NULL,
+  `user_fk` int(11) NOT NULL,
+  `firstname` varchar(50) CHARACTER SET ascii COLLATE ascii_bin NOT NULL,
+  `lastname` varchar(50) CHARACTER SET ascii COLLATE ascii_bin NOT NULL,
+  `age` int(11) NOT NULL,
+  `deretype` varchar(50) CHARACTER SET ascii COLLATE ascii_bin NOT NULL,
+  `accepted` tinyint(1) NOT NULL,
+  `image` varchar(250) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Daten für Tabelle `loli`
+--
+
+INSERT INTO `loli` (`id`, `user_fk`, `firstname`, `lastname`, `age`, `deretype`, `accepted`, `image`) VALUES
+(1, 0, 'Test', 'Mitsu', 10, 'Deredere', 1, 'mitsu/test.png'),
+(11, 0, 'Koko', 'Gentokoyama', 12, 'Tsundere', 0, 'gentokoyama/loli8.jpg'),
+(12, 0, 'Taiga', 'Aisaka', 16, 'Tsundere', 0, 'aisaka/loli4.jpg'),
+(13, 0, 'Totsuka', 'Saika', 16, 'Trap', 0, 'saika/loli11-trap.jpg'),
+(14, 0, 'Yuzuki', 'Yukari', 14, 'Himedere', 0, 'yukari/loli9.jpg'),
+(15, 7, 'Nesuri', 'Eguson', 9, 'Yandere', 0, 'eguson/just_mio.png'),
+(16, 7, 'Felix', 'Argyle', 20, 'Deredere', 0, 'argyle/loli12-trap.jpg'),
+(17, 7, 'Keika', 'Kawasaki', 10, 'Kuudere', 0, 'kawasaki/loli10.jpg');
+
+-- --------------------------------------------------------
+
+--
+-- Tabellenstruktur für Tabelle `loli_user`
+--
+
+CREATE TABLE `loli_user` (
+  `id` int(11) NOT NULL,
+  `loli_fk` int(11) NOT NULL,
+  `user_fk` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Tabellenstruktur für Tabelle `media`
+--
+
+CREATE TABLE `media` (
+  `id` int(11) NOT NULL,
+  `name` varchar(50) CHARACTER SET ascii COLLATE ascii_bin NOT NULL,
+  `loli_fk` int(11) NOT NULL,
+  `user_fk` int(11) NOT NULL,
+  `mediatype` enum('video','audio','various','') NOT NULL,
+  `hidden` tinyint(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Daten für Tabelle `media`
+--
+
+INSERT INTO `media` (`id`, `name`, `loli_fk`, `user_fk`, `mediatype`, `hidden`) VALUES
+(1, 'AMV - Toradora Taiga Aisaka.mp4', 12, 7, 'video', 0),
+(3, '10 Minutes of Soft Loli Breathing.mp3', 11, 7, 'audio', 0),
+(4, '10 Minutes of Soft Loli Breathing.mp3', 15, 7, 'audio', 0),
+(5, '10 Minutes of Soft Loli Breathing.mp3', 12, 7, 'audio', 0),
+(6, 'AMV - Toradora Taiga Aisaka.mp4', 12, 7, 'video', 0);
+
+-- --------------------------------------------------------
+
+--
 -- Tabellenstruktur für Tabelle `order`
 --
 
@@ -141,7 +210,8 @@ INSERT INTO `product_categorie` (`categorieFk`, `productFk`) VALUES
 (3, 3),
 (2, 4),
 (1, 5),
-(1, 6);
+(1, 6),
+(0, 6);
 
 -- --------------------------------------------------------
 
@@ -152,7 +222,9 @@ INSERT INTO `product_categorie` (`categorieFk`, `productFk`) VALUES
 CREATE TABLE `review` (
   `id` int(11) NOT NULL,
   `userFk` int(11) NOT NULL,
+  `article_fk` int(11) NOT NULL,
   `text` varchar(255) NOT NULL,
+  `date` date NOT NULL,
   `rating` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -184,7 +256,7 @@ INSERT INTO `role` (`id`, `name`) VALUES
 CREATE TABLE `stars` (
   `id` int(11) NOT NULL,
   `userFk` int(11) NOT NULL,
-  `starrReview` enum('1','2','3','4','5') DEFAULT NULL
+  `starReview` enum('1','2','3','4','5') DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -247,6 +319,26 @@ ALTER TABLE `categorie`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indizes für die Tabelle `loli`
+--
+ALTER TABLE `loli`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `user_fk` (`user_fk`);
+
+--
+-- Indizes für die Tabelle `loli_user`
+--
+ALTER TABLE `loli_user`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indizes für die Tabelle `media`
+--
+ALTER TABLE `media`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `loli_fk` (`loli_fk`,`user_fk`);
+
+--
 -- Indizes für die Tabelle `order`
 --
 ALTER TABLE `order`
@@ -273,7 +365,8 @@ ALTER TABLE `product_categorie`
 --
 ALTER TABLE `review`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `userFk` (`userFk`);
+  ADD KEY `userFk` (`userFk`),
+  ADD KEY `article_fk` (`article_fk`);
 
 --
 -- Indizes für die Tabelle `role`
@@ -310,6 +403,24 @@ ALTER TABLE `cart`
 --
 ALTER TABLE `categorie`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT für Tabelle `loli`
+--
+ALTER TABLE `loli`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+
+--
+-- AUTO_INCREMENT für Tabelle `loli_user`
+--
+ALTER TABLE `loli_user`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT für Tabelle `media`
+--
+ALTER TABLE `media`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT für Tabelle `order`
