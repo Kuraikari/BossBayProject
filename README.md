@@ -37,3 +37,6 @@ There are different features and uses for this proect. There is a shop, media up
 In the future there will be few updates, mainly for maintaining, so feel free to use this project to create something new. 
 
 ## Installation
+- SQL in einer Datenbank namens "boss" (ohne) Anführungszeichen importieren.
+- .htaccess kopieren und in den parent-ordner einfügen. 
+- kopierte .htaccess file bearbeiten, so dass der Pfad nur noch "/" enthält
